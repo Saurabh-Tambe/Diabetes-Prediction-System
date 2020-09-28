@@ -1,0 +1,87 @@
+{% extends 'layout1.html' %}
+
+{% block title %}LOGIN{% endblock %}
+
+{% block content %}
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrapvalidator.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrapValidator.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<h2></h2>
+<div>
+     <center>
+        <div class="a" style="background-color:lightblue">
+        
+        <p style="color:blue;text-align:center;font-size:50px;">Diabetes Prediction System</p>
+<img src="/static/images/im2.jpg" height="200px" width="350px">
+        </div>
+<br><br>
+        <div class="a" style="background-color:lightblue">
+          
+			 
+    <form class="well form-horizontal" action="{{ url_for('contact') }}" method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Contact Us Today!</legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="name" placeholder="Name" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+ 
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail ID" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div> 
+
+ 
+      
+<div class="form-group">
+  <label class="col-md-4 control-label">Comments</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+<textarea class="form-control" name="comment" placeholder="Comments" required></textarea>
+   
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+<button type="reset" class="btn btn-warning" >Reset <span class="glyphicon glyphicon-refresh"></span></button>
+  </div>
+</div>
+
+<div class="msg">{{ msg }}</div>
+ 
+</form>
+
+
+</div>
+</center>
+		 
+{% endblock %}

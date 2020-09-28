@@ -1,0 +1,114 @@
+ 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ 
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrapValidator.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+ 
+<style>
+div.d1 {
+  height: 800px;
+  width: 50%;
+  background-color: lightblue;
+}
+div.d2 {
+  height: 280px;
+  width: 40%;
+   
+}
+ 
+ 
+</style>
+	</head>
+	<body class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>DIABETES PREDICTION SYSTEM</h1>
+              
+                 
+  <a href="{{ url_for('dashboard') }}"><i class="fas fa-home"></i>Dashboard</a>
+	<a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile</a>
+ 
+ <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+				 
+			</div>
+		</nav>
+
+ 
+<center>
+<div style="background-color:" class="">
+
+<br>
+<button onmouseover="myFunction()" class="btn btn-primary btn-lg">Prediction/Result</button>
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+
+function myFunction() {
+ 
+   var sVar = '{{ prediction_text }}';
+ 
+     if (sVar =="YES") {
+    greeting = "<div style=background-color: class=d2><h1 style=color:red;font-size:300%;>Positive</h1><img src=/static/images/positive.jpeg class=rounded-circle></div><div><button type=button class=btn btn-danger><b>Patient may suffer from Diabetes!</b></button></div>";
+  }   else {
+    greeting = "<div style=background-color: class=d2><h1 style=color:green;font-size:300%;>Negative</h1><img src=/static/images/safe.png height=220 width=220></div><br><div><button class=btn btn-success><b>Patient does not suffer from Diabetes</b></button><br></div></div>";
+  }
+  document.getElementById("demo").innerHTML = greeting;
+ 
+}
+</script> 
+
+
+
+<!--
+str1={{prediction_text}}
+str2=YES
+str3=NO
+
+{% if str1==str2 %}
+    
+   <div style="background-color:red" class="d2">
+  <h1 style="color:black;font-size:300%;">Positive</h1><img src="/static/images/positive.jpeg"></div>
+ 
+{% endif %}
+
+{% if str1==str3 %}
+ 
+    <div style="background-color:green" class="d2">
+  <h1 style="color:black;font-size:300%;">Negative</h1><img src="/static/images/positive.jpeg"></div>
+    
+{% endif %}
+ 
+
+{% block content %}
+    {% if str1==str2 %}
+      <div style="background-color:red" class="d2">
+  <h1 style="color:black;font-size:300%;">Positive</h1><img src="/static/images/positive.jpeg"></div>
+    {% else %}
+        {{ super() }}
+    {% endif %}
+{% endblock content %}
+
+-->
+ 
+<!--<h1> {{ prediction_text }}</h1> -->
+ 
+<button class="btn btn-info btn-lg">
+<a href="{{ url_for('report') }}">Show Pdf Report</a></button>
+ 
+</div>
+
+
+</center>
+
+ 
+
+ 

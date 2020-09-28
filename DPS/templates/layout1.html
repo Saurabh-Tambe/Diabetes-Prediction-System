@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+ 
+	</head>
+	<body class="loggedin">
+		<nav class="navtop">
+			<div>
+				<h1>DIABETES PREDICTION SYSTEM</h1>
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+                 <a href="{{ url_for('about') }}"><i class="fas fa-book-open"></i>About</a>
+                  <a href="{{ url_for('contact') }}"><i class="fas fa-address-card"></i>Contact Us</a>
+				 
+			</div>
+		</nav>
+		<div class="content">
+			{% block content %}{% endblock %}
+		</div>
+
+
+
+
+
+
+
+
+
+	</body>
+</html>

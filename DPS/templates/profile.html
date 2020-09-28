@@ -1,0 +1,183 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Profile Page</h2>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrapvalidator.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrapValidator.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+.hidetext { -webkit-text-security: disc; /* Default */ }
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function myFunction2() {
+  var x = document.getElementById("myInput2");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+<style>
+#MyForm{
+	display: none;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 14px;
+    background: #ececec;
+}
+#MyForm2{
+	display: none;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 14px;
+    background: #ececec;
+}	
+</style>
+<script>
+$(document).ready(function(){
+	$('#Mybtn').click(function(){
+  		$('#MyForm').toggle(500);
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+	$('#Mybtn2').click(function(){
+  		$('#MyForm2').toggle(500);
+  });
+});
+</script>
+<script>
+function myFun() {
+  alert(' Updated Sucessfully')	 
+}
+</script>
+<div style="background-color:lightblue">
+    <p>Your account details are below:</p>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>{{ account['username'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+             <td><input type="password" value={{account['password']}} id="myInput">   </td>   
+           <!-- <td class="hidetext" id="myInput">{{ account['password'] }}</td>-->
+            <td><input type="checkbox" onclick="myFunction()">Show Password</td>
+
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ account['email'] }}</td>
+        </tr>
+    </table>
+</div>
+<div style="background-color:lightblue">
+
+<p>Click below button to Update your profile details.</p>
+ {% with messages = get_flashed_messages() %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for message in messages %}
+ <div class="alert alert-warning alert-dismissible" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			{{message}}
+		  </div>
+         
+         
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}
+<button id="Mybtn" class="btn btn-primary">Update Password</button>
+    <form class="well form-horizontal"  id="MyForm" action="{{ url_for('up_pass') }}" method="post"  id="up_form">
+ 
+
+
+<div class="form-group">
+  
+  <div class="col-md-12 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input  name="pass" id="myInput2" placeholder="Enter your password" class="form-control"  type="password" required>
+
+
+    </div>
+  </div>
+</div>
+ <input type="checkbox" onclick="myFunction2()">Show Password 
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" name="submit" class="btn btn-warning">Submit<span class="glyphicon glyphicon-send"></span></button>
+ 
+  </div>
+</div>
+
+ 
+
+ 
+ 
+</form>	 
+ 
+
+ 
+ 
+<button id="Mybtn2" class="btn btn-primary">Update Email</button>
+    <form class="well form-horizontal" id="MyForm2"  action="{{ url_for('up_mail') }}" method="post"  id="up_form">
+
+
+<div class="form-group">
+  
+  <div class="col-md-12 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="Enter your Email"   placeholder="Enter your email" class="form-control"  type="email" required>
+ 
+    </div>
+  </div>
+</div>
+  
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" name="submit" class="btn btn-warning">Submit<span class="glyphicon glyphicon-send"></span></button>
+ 
+  </div>
+</div>
+
+ 
+ 
+</form>	 
+ 
+  	 
+	 
+  	 
+   
+<!------------->
+
+</div>
+{% endblock %}

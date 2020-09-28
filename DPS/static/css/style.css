@@ -1,0 +1,20 @@
+input[type=text] {
+  background-color: #3CBC8D;
+  color: white;
+}
+
+ * {
+  	box-sizing: border-box;
+  	font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+  	font-size: 16px;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+body {
+  	background-color: #435165;
+  	margin: 0;
+}
+ 
+.for{
+  	background-color: #f3f4f7;
+}
