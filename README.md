@@ -1,7 +1,7 @@
 # Diabetes-Prediction-System 
 Diabetes Prediction Using Machine Learning Algorithms
 
-📌Problem Statement
+📌Problem Statement :-
 Diabetes mellitus is one of the chronic disease characterized by hyperglycemia. It may cause
 many complications. According to the growing morbidity in recent years, in 2040, the world’s
 diabetic patients will reach 642 million, which suggests that one among the ten adults in the
@@ -13,14 +13,14 @@ learning classification algorithms like Decision Tree, KNN and Naive Bayes etc. 
 used in this process to detect diabetes at an early stage.Ensemble Learning techniques helps
 to improve the accuracy of prediction.
 
-📌Scope
+📌Scope :-
 1. This system can be used in Hospitals for Diabetes Prediction at an early stage.
 2. This can be also used for generating machine learning dataset.
 3. In Pathology labs for Diabetes Prediction.
 4. Useful for small clinics in rural areas.
 
 
-📌Objective
+📌Objective :-
 1. To predict whether the person suffers from Diabetes or not.
 2. To simplify the process of Diabetes detection using Machine Learning.
 3. To evaluate the performance of different algorithms used for prediction.
